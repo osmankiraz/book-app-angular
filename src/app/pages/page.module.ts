@@ -7,6 +7,11 @@ import { HeaderComponent } from '../nav/header/header.component';
 import { HomeComponent } from './home/home.component';
 import { PageRoutingModule } from './page-routing.module';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { AdminCategoryNeweditComponent } from './admin-category-newedit/admin-category-newedit.component';
+import { CategoryService } from '../services/category.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AdminCategoryListComponent } from './admin-category-list/admin-category-list.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +20,10 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
     HeaderComponent,
     AdminLayoutComponent,
     AdminHomeComponent,
+    AdminCategoryNeweditComponent,
+    AdminCategoryListComponent,
   ],
-  imports: [CommonModule, PageRoutingModule, MaterialModule],
+  imports: [CommonModule, PageRoutingModule, MaterialModule,HttpClientModule ,ReactiveFormsModule],
+  providers:[CategoryService]
 })
 export class PageModule {}
