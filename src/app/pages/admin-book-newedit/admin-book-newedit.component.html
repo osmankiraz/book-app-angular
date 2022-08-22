@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-md-6 offset-3">
+    <h1>{{ title }}</h1>
+    <form
+      class="form-container"
+      (ngSubmit)="onSubmit()"
+      [formGroup]="bookForm!"
+    >
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          placeholder="Kategori Seç"
+          formControlName="categoryBy"
+          [matAutocomplete]="auto"
+        />
+        <mat-autocomplete
+          #auto="matAutocomplete"
+          [displayWith]="displayCategoryName"
+        >
+          <mat-option *ngFor="let category of categories " [value]="category">{{
+            category.name
+          }}</mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+
+      <div>
+        <input type="file" (change)="uploadImg($event)" />
+      </div>
+
+      <mat-form-field class="mt-1">
+        <input matInput formControlName="title" placeholder="Kitap Başlığı" />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="author" placeholder="Yazar" />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="price" placeholder="Fiyat" />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName="stock" placeholder="Stok" />
+      </mat-form-field>
+
+      <div class="row justify-content-center">
+        <button class="mt-2 col-md-4" type="submit" mat-raised-button color="primary">
+          {{ btnText }}
+        </button>
+
+      </div>
+    </form>
+  </div>
+</div>
