@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminLayoutComponent } from '../layouts/admin-layout/admin-layout.component';
 import { MainLayoutComponent } from '../layouts/main-layout/main-layout.component';
+import { AdminBookNeweditComponent } from './admin-book-newedit/admin-book-newedit.component';
 import { AdminCategoryNeweditComponent } from './admin-category-newedit/admin-category-newedit.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { HomeComponent } from './home/home.component';
@@ -27,6 +28,14 @@ const routes: Routes = [
       {
         path: 'category/:id',
         component: AdminCategoryNeweditComponent,
+      },
+      {
+        path: 'book',
+        component: AdminBookNeweditComponent,
+      },
+      {
+        path: 'book/:id',
+        component: AdminBookNeweditComponent,
       },
     ],
   },
