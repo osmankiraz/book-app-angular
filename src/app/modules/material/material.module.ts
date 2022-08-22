@@ -8,6 +8,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatIconModule } from '@angular/material/icon';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+
 const matModules = [
   MatToolbarModule,
   MatButtonModule,
@@ -16,7 +18,8 @@ const matModules = [
   MatInputModule,
   MatTableModule,
   MatPaginatorModule,
-  MatIconModule
+  MatIconModule,
+  MatAutocompleteModule
 ];
 
 @NgModule({
