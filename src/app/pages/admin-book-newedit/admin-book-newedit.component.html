@@ -30,15 +30,27 @@
 
       <mat-form-field class="mt-1">
         <input matInput formControlName="title" placeholder="Kitap Başlığı" />
+        <mat-error *ngIf="bookForm!.controls['title'].invalid">
+          <div *ngIf="bookForm!.controls['title'].hasError('required')">Bu alan boş bırakılamaz !</div>
+        </mat-error>
       </mat-form-field>
       <mat-form-field>
         <input matInput formControlName="author" placeholder="Yazar" />
+        <mat-error *ngIf="bookForm!.controls['author'].invalid">
+          <div *ngIf="bookForm!.controls['author'].hasError('required')">Bu alan boş bırakılamaz !</div>
+        </mat-error>
       </mat-form-field>
       <mat-form-field>
         <input matInput formControlName="price" placeholder="Fiyat" />
+        <mat-error *ngIf="bookForm!.controls['price'].invalid">
+          <div *ngIf="bookForm!.controls['price'].hasError('required')">Bu alan boş bırakılamaz !</div>
+        </mat-error>
       </mat-form-field>
       <mat-form-field>
         <input matInput formControlName="stock" placeholder="Stok" />
+        <mat-error *ngIf="bookForm!.controls['stock'].invalid">
+          <div *ngIf="bookForm!.controls['stock'].hasError('required')">Bu alan boş bırakılamaz !</div>
+        </mat-error>
       </mat-form-field>
 
       <div class="row justify-content-center">

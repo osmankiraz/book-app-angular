@@ -42,7 +42,7 @@ export class AdminCategoryListComponent implements OnInit {
   }
 
   setCategoryNo(){
-    this.categories.forEach((categories, index) => {
+    this.categories.forEach((category, index) => {
       this.categories[index]['no'] = index + 1;
     });
   }

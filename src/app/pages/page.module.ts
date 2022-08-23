@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AdminCategoryListComponent } from './admin-category-list/admin-category-list.component';
 import { AdminBookNeweditComponent } from './admin-book-newedit/admin-book-newedit.component';
+import { AdminBookListComponent } from './admin-book-list/admin-book-list.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AdminBookNeweditComponent } from './admin-book-newedit/admin-book-newed
     AdminCategoryNeweditComponent,
     AdminCategoryListComponent,
     AdminBookNeweditComponent,
+    AdminBookListComponent,
   ],
   imports: [CommonModule, PageRoutingModule, MaterialModule,HttpClientModule ,ReactiveFormsModule],
   providers:[CategoryService]
