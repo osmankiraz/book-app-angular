@@ -9,7 +9,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatIconModule } from '@angular/material/icon';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
-
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
 const matModules = [
   MatToolbarModule,
   MatButtonModule,
@@ -19,7 +20,9 @@ const matModules = [
   MatTableModule,
   MatPaginatorModule,
   MatIconModule,
-  MatAutocompleteModule
+  MatAutocompleteModule,
+  MatCardModule,
+  MatListModule
 ];
 
 @NgModule({
