@@ -11,7 +11,7 @@ const routes: Routes = [
   {
     path: '',
     component: MainLayoutComponent,
-    children: [{ path: '', component: HomeComponent }],
+    children: [{ path: '', component: HomeComponent },{ path: 'kategori/:id', component: HomeComponent }],
   },
   {
     path: 'admin',
