@@ -23,8 +23,18 @@ export class BookService {
     return this.http.post<any>(`${this.apiurl}/saveImage`, img);
   }
 
+  deleteBook(bookId: string) {
+    return this.http.delete<any>(`${this.apiurl}/${bookId}`);
+  }
+
   getBooks() {
     return this.http.get<any>(this.apiurl).pipe(map((res) => res.data));
+  }
+
+  getBooksByCategoryId(categoryId: string) {
+    return this.http
+      .get<any>(`${environment.baseUrl}/books/${categoryId}`)
+      .pipe(map((res) => res.data));
   }
 
   getBookById(bookId: string) {
