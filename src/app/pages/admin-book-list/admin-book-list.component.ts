@@ -27,24 +27,31 @@ export class AdminBookListComponent implements OnInit {
   constructor(private bookService: BookService) {}
 
   ngOnInit(): void {
-    this.initTable()
+    this.initTable();
   }
 
-  initTable(){
+  initTable() {
     this.bookService.getBooks().subscribe((response) => {
-      this.books=response;
+      this.books = response;
       this.setBooksNo();
-      this.dataSource=new MatTableDataSource<Book>(this.books);
-      this.dataSource.paginator=this.paginator
+      this.dataSource = new MatTableDataSource<Book>(this.books);
+      this.dataSource.paginator = this.paginator;
     });
   }
 
-  delete(bookId:string){
-
+  delete(bookId: string) {
+    this.bookService.deleteBook(bookId).subscribe(() => {
+      // this.getCategories();
+      const book = this.books.filter((x)=> x._id == bookId)[0];
+      const index = this.books.indexOf(book);
+      this.books.splice(index, 1);
+      this.setBooksNo();
+      this.dataSource = new MatTableDataSource<Book>(this.books);
+    });
   }
-  setBooksNo(){
-    this.books.forEach((book,index) => {
-      this.books[index]['no']= index+1
+  setBooksNo() {
+    this.books.forEach((book, index) => {
+      this.books[index]['no'] = index + 1;
     });
   }
 }
