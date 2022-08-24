@@ -29,6 +29,11 @@ export class AdminBookNeweditComponent implements OnInit {
   type?: string;
   categories: Category[] = [];
 
+  get pictureFile(){
+    return this.bookForm?.get("pictureFile")
+  }
+
+
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -65,7 +70,8 @@ export class AdminBookNeweditComponent implements OnInit {
       price: new FormControl('', Validators.required),
       stock: new FormControl('', Validators.required),
       picture: new FormControl(''),
-      categoryBy: new FormControl(''),
+      categoryBy: new FormControl('',Validators.required),
+      pictureFile:new FormControl('',Validators.required)
     });
   }
 
