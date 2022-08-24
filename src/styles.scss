@@ -11,3 +11,19 @@ a{
   text-decoration: none;
 }
 
+
+.card-book{
+  width: 250px;
+  margin: 0px 10px 10px 10px;
+  float: left;
+}
+
+.card-book:hover{
+  box-shadow: 5px 10px 18px #888888;
+}
+
+.card-book img {
+  width: 230px;
+  height: 350px;
+  margin: auto;
+}
