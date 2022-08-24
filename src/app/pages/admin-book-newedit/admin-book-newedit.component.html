@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-6 offset-3">
     <h1>{{ title }}</h1>
-    <form
+    <form #myForm="ngForm"
       class="form-container"
       (ngSubmit)="onSubmit()"
       [formGroup]="bookForm!"
@@ -14,6 +14,10 @@
           formControlName="categoryBy"
           [matAutocomplete]="auto"
         />
+
+        <mat-error *ngIf="bookForm!.controls['categoryBy'].invalid">
+          <div *ngIf="bookForm!.controls['categoryBy'].hasError('required')">Bu alan boş bırakılamaz !</div>
+        </mat-error>
         <mat-autocomplete
           #auto="matAutocomplete"
           [displayWith]="displayCategoryName"
@@ -25,7 +29,10 @@
       </mat-form-field>
 
       <div>
-        <input type="file" (change)="uploadImg($event)" />
+        <input formControlName="pictureFile" type="file" (change)="uploadImg($event)" />
+        <div *ngIf="pictureFile!.invalid && myForm.submitted">
+          <span style="color:red; font-size: 75%;" *ngIf="pictureFile?.hasError('required')" >Lütfen bir resim seçiniz!</span>
+        </div>
       </div>
 
       <mat-form-field class="mt-1">
