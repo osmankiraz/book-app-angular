@@ -5,13 +5,18 @@ import { MainLayoutComponent } from '../layouts/main-layout/main-layout.componen
 import { AdminBookNeweditComponent } from './admin-book-newedit/admin-book-newedit.component';
 import { AdminCategoryNeweditComponent } from './admin-category-newedit/admin-category-newedit.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { BookComponent } from './book/book.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
     path: '',
     component: MainLayoutComponent,
-    children: [{ path: '', component: HomeComponent },{ path: 'kategori/:id', component: HomeComponent }],
+    children: [
+      { path: '', component: HomeComponent },
+      { path: 'kategori/:id', component: HomeComponent },
+      { path: 'book/:id', component: BookComponent },
+    ],
   },
   {
     path: 'admin',

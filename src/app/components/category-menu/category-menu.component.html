@@ -5,7 +5,7 @@
 
   <mat-card-content>
     <mat-list>
-      <a mat-list-item *ngFor="let category of categories" [routerLink]="['/kategori',category._id]" >
+      <a mat-list-item *ngFor="let category of categories" [routerLink]="['/kategori',category._id]" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" >
         <mat-icon>chevron_right</mat-icon>
         {{category.name}}
       </a>
